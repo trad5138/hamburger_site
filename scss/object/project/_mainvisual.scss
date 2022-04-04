@@ -1,0 +1,42 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* メイン 画像 エリア */
+.p-mainvisual-body {
+    display: block;                      /* ブロック要素にする */
+    position: relative;                  /* 表示位置の基準値を設定する */
+    background-size: cover;              /* 画像の縦横比保持して全体に覆う*/
+    background-position: center center;  /* 画像は中央に設定*/
+    width: 100%;                         /* 横幅一杯に*/
+    padding-top: 75%;                    /* 縦横比 75%にして、画像の縦横比を保持したまま伸縮させる  アスペクト比：4:3 */
+    max-height: 28em;                    /* 高さ限度280pxに設定 --- 効いていない模様*/
+
+    @include mixin.mq(tablet) {
+        padding-top: 35%;                  /* 縦横比 35%にして、画像の縦横比を保持したまま伸縮させる*/
+        max-height: 28em;                  /* 高さ限度280pxに設定 --- 効いていない模様*/
+    }
+
+    @include mixin.mq(pc) {
+        padding-top: 35%;                   /* 縦横比 35%にして、画像の縦横比を保持したまま伸縮させる PCとタブレットは同じような画像表示のため*/
+        max-height: 38em;                   /* 高さ限度380pxに設定 --- 効いていない模様*/
+    }
+}
+
+/* メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual_title {
+    display: block;               /* 上下中央位置に表示させるため、ブロック要素にする */
+    position: absolute;           /* 表示位置を設定 */
+    top: 50%;                     /* 上から50%の位置に配置する */
+    transform: translateY(-50%);  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+    left: 0.5em;                  /* スマホは、左から0.5emの位置に配置 */
+
+    @include mixin.mq(tablet) {
+        left: 2em;                  /* タブレットは、左から2emの位置に配置 */
+    }
+
+    @include mixin.mq(pc) {
+        left: 2em;                  /* PCは、左から2emの位置に配置 -- タブレットと同じ位置 */
+    }    
+}
+

@@ -1,0 +1,24 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+
+/* ヘッダー部の背景色 */
+.c-bgcolor-header {
+    background-color: color.$color-bg--header;
+}
+
+/* サービスメニュー部の背景色 */
+.c-bgcolor-service-menu {
+    background-color: color.$color-bg--service-menu_body;
+}
+
+/* サービスメニュー アイテムの背景色－白透過 */
+.c-bgcolor-service-menu_item {
+    background-color: color.$color-bg--service-menu-item;
+}
+
+/* サイドバー部の背景色 */
+.c-bgcolor-sidebar {
+    background-color: color.$color-bg--sidebar;
+}
