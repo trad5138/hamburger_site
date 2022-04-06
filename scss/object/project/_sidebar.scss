@@ -8,10 +8,11 @@
 	height: 100vh;      /* 高さ */
 	position: fixed;    /* 表示位置 固定*/
 	top: 0;             /* 上からの位置 */
-	left: 115%;         /* 左からの位置 右横外側 15％ */
+	/*left: 115%;*/         /* 左からの位置 右横外側 15％ -- 課題修正指摘あり → left:100%にする*/
+    left: 100%;         /* 左からの位置 右横外側 15％ */
     overflow-y: auto;   /* 縦 スクロール */
     transition: .4s;    /* 表示時間 0.4秒 */
-    z-index: 1000;
+    z-index: 2000;
 
     @include mixin.mq(tablet) {
         width: 45%;     /* 横幅 タブレットは右から45％幅 */
@@ -27,49 +28,54 @@
 		z-index: auto;      /* 表示優先順位 autoに設定*/		
 	}
     
-    /* スマホとタブレットのスモーク表示 */
-    &::after {
-        content: "";
-        width: 15%;         /* 横幅 スマホは左から15％幅 */
-        height: 100vh;      /* 高さ */
-        background: color.$color-bg--sideber--transparent;  /* 透過度60% */
-        position: fixed;    /* 表示位置を設定 */
-        top: 0;             /* 上からの位置設定 */
-        left: 100%;         /* 左からの位置設定 */
-        transition: .4s;    /* 表示時間 0.4秒 */        
+    /* スマホとタブレットのスモーク表示 */ /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+    /*&::after {*/
+        /*content: "";*/
+        /*width: 15%;*/         /* 横幅 スマホは左から15％幅 */
+        /*width: 100%;*/         /* 横幅 スマホは左から15％幅 */
+        /*height: 100vh;*/      /* 高さ */
+        /*background: color.$color-bg--sideber--transparent; */ /* 透過度60% */
+        /*position: fixed;*/    /* 表示位置を設定 */
+        /*position: absolute;*/    /* 表示位置を設定 */
+        /*top: 0;*/             /* 上からの位置設定 */
+        /*left: 100%;*/         /* 左からの位置設定 */
+        /*transition: .4s;*/    /* 表示時間 0.4秒 */   
+        /*z-index: 300; */    
     
-        @include mixin.mq(tablet) {
-            width: 55%;     /* 横幅 スマホは左から55％幅 */
-        }
+        /*@include mixin.mq(tablet) {*/
+            /*width: 55%;*/     /* 横幅 スマホは左から55％幅 */
+            /*width: 100%; */    /* 横幅 スマホは左から55％幅 */
+        /*}*/
     
-        @include mixin.mq(pc) {
-            display: none;  /* PCは非表示 */
+        /*@include mixin.mq(pc) {*/
+            /*display: none;*/  /* PCは非表示 */
             /*width: 0;*/     /* 横幅 PCは非表示のため 幅0 */
             /*height: 0; */   /* 高さ PCは非表示のため 高さ0 */
-        }  
-    }
+        /*} */ 
+    /*}*/
 
     /* サイドバーを表示 */
     &.is-open {
 		top: 0;             /* 上からの位置設定 */
 		left: 15%;          /* 左からの位置設定 スマホは15%*/
+        /*z-index: 2000;*/  /* 上で設定しているのではずす*/
        
         @include mixin.mq(tablet) {
             left: 55%;       /* 左からの位置設定 タブレットは55%*/
         }
 
-        &::after {
-            content: "";
-            top: 0;           /* 上からの位置設定 */
-            left: 0;          /* 左からの位置設定 左端*/            
-        }
+        /*&::after {*/ /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+            /*content: "";*/
+            /*top: 0; */          /* 上からの位置設定 */
+            /*left: 0;*/          /* 左からの位置設定 左端*/
+        /*}*/
 	}
 }
 
-/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 */
-body.is-open {
-    position: fixed;         /* 表示位置を固定*/
-}
+/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 *//*→ body.scssに移動*/
+/*body.is-open {*/
+    /*position: fixed;*/         /* 表示位置を固定*/
+/*}*/
 
 /* サイドバー部 PC画面の時に「MENU」の表示設定 */
 .p-sidebar-menu {
@@ -86,7 +92,7 @@ body.is-open {
 .p-sidebar-category_body {
     display: block;
     position: relative;     /* 表示位置の基準値を設定する */
-    padding-top: 14em;      /* 上余白設定  */
+    padding-top: 6em;      /* 上余白設定  */
 
     @include mixin.mq(pc) {
         margin-top: 0;      /* 上余白設定 */ 
@@ -113,7 +119,7 @@ body.is-open {
     margin-top: 1em;
  
     @include mixin.mq(pc) {
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
     
 }

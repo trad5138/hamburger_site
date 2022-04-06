@@ -22,3 +22,10 @@
 .c-bgcolor-sidebar {
     background-color: color.$color-bg--sidebar;
 }
+
+/* スマホ・タブレット サイドバー表示のスモーク背景色 */
+.c-bgcolor-menu-bg {
+    background: color.$color-bg--sideber--transparent;  /* 透過度60% */
+}
+
+

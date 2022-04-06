@@ -46,11 +46,13 @@
 
 //@import "object/project/*";
 @forward "object/project/access";
+@forward "object/project/body";
 @forward "object/project/button";
 @forward "object/project/copyright";
 @forward "object/project/footer";
 @forward "object/project/header";
 @forward "object/project/mainvisual";
+@forward "object/project/menubg";
 @forward "object/project/searchform";
 @forward "object/project/servicemenu";
 @forward "object/project/sidebar";

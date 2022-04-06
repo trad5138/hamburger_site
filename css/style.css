@@ -628,6 +628,12 @@ input[type=search] {
   background-color: #f2ede9;
 }
 
+/* スマホ・タブレット サイドバー表示のスモーク背景色 */
+.c-bgcolor-menu-bg {
+  background: rgba(0, 0, 0, 0.6);
+  /* 透過度60% */
+}
+
 /* スマホ・タブレット画面のヘッダー部の「MENU」ボタンtag初期設定解除 */
 .c-button-menu {
   display: inline-block;
@@ -1608,6 +1614,12 @@ input[type=search] {
   /* 高さ */
 }
 
+/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 */
+body.is-open {
+  position: fixed;
+  /* 表示位置を固定*/
+}
+
 /* ヘッダー部 スマホ・タブレット幅の時にMENUを表示 PC時は非表示 */
 .p-button-menu {
   position: absolute;
@@ -1813,6 +1825,71 @@ input[type=search] {
     left: 2em;
     /* PCは、左から2emの位置に配置 -- タブレットと同じ位置 */
   }
+}
+
+/* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
+.p-menu-bg {
+  width: 100%;
+  /* 横幅 スマホは右から85％幅 */
+  height: 100vh;
+  /* 高さ */
+  position: fixed;
+  /* 表示位置 固定*/
+  /*display: block;*/
+  top: 0;
+  /* 上からの位置 */
+  left: 100%;
+  /* 左からの位置 右横外側 0％ */
+  /*background: color.$color-bg--sideber--transparent;*/
+  /* 透過度60% */
+  /*overflow-y: auto;*/
+  /* 縦 スクロール */
+  /*transition: .4s;*/
+  /* 表示時間 0.4秒 */
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  /*animation: fadeIn 0.4s ease;*/
+  /*transition: 0.4s;*/
+  opacity: 0;
+  z-index: 500;
+  /*@include mixin.mq(tablet) {
+       width: 45%; */
+  /* 横幅 タブレットは右から45％幅 */
+  /*height: 100vh;*/
+  /* 高さ */
+  /*left: 155%;*/
+  /* 左からの位置 右横外側 55％ */
+  /*}*/
+  /*@include mixin.mq(pc) {
+         display: none;
+
+  }*/
+  /* サイドバーを表示 */
+}
+.p-menu-bg.is-open {
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 スマホは15%*/
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  opacity: 1;
+  /*width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: color.$color-bg--sideber--transparent; 
+  z-index: 500;*/
+  /*@include mixin.mq(tablet) {
+      left: 55%; */
+  /* 左からの位置設定 タブレットは55%*/
+  /*}*/
+  /*&::after {
+      content: "";
+      top: 0; */
+  /* 上からの位置設定 */
+  /*left: 0;*/
+  /* 左からの位置設定 左端*/
+  /*}*/
 }
 
 /* サーチボックスの設定 */
@@ -2055,24 +2132,30 @@ input[type=search] {
 @media screen and (min-width: 1025px) {
   .p-service-menu_content_item {
     margin-top: 2em;
-    padding: 1.5em 2em;
+    padding: 2em 2em;
     /*内余白の設定*/
   }
 }
 .p-service-menu_content_item_dd {
-  padding: 1em 0 1.5em 0;
+  /*padding: 1em 0 1.5em 0;*/
   /*内余白の設定*/
+  padding: 1em 0 0.5em 0;
+  /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
 }
 @media screen and (min-width: 600px) {
   .p-service-menu_content_item_dd {
-    padding: 1em 0 2em 0;
+    /*padding: 1em 0 2em 0;*/
     /*内余白の設定*/
+    padding: 1em 0 0.5em 0;
+    /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
   }
 }
 @media screen and (min-width: 1025px) {
   .p-service-menu_content_item_dd {
-    padding: 1em 0 3.5em 0;
+    /*padding: 1em 0 3.5em 0;*/
     /*内余白の設定*/
+    padding: 1em 0 0.5em 0;
+    /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
   }
 }
 
@@ -2086,14 +2169,53 @@ input[type=search] {
   /* 表示位置 固定*/
   top: 0;
   /* 上からの位置 */
-  left: 115%;
+  /*left: 115%;*/
+  /* 左からの位置 右横外側 15％ -- 課題修正指摘あり → left:100%にする*/
+  left: 100%;
   /* 左からの位置 右横外側 15％ */
   overflow-y: auto;
   /* 縦 スクロール */
   transition: 0.4s;
   /* 表示時間 0.4秒 */
-  z-index: 1000;
+  z-index: 2000;
   /* スマホとタブレットのスモーク表示 */
+  /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+  /*&::after {*/
+  /*content: "";*/
+  /*width: 15%;*/
+  /* 横幅 スマホは左から15％幅 */
+  /*width: 100%;*/
+  /* 横幅 スマホは左から15％幅 */
+  /*height: 100vh;*/
+  /* 高さ */
+  /*background: color.$color-bg--sideber--transparent; */
+  /* 透過度60% */
+  /*position: fixed;*/
+  /* 表示位置を設定 */
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /* 上からの位置設定 */
+  /*left: 100%;*/
+  /* 左からの位置設定 */
+  /*transition: .4s;*/
+  /* 表示時間 0.4秒 */
+  /*z-index: 300; */
+  /*@include mixin.mq(tablet) {*/
+  /*width: 55%;*/
+  /* 横幅 スマホは左から55％幅 */
+  /*width: 100%; */
+  /* 横幅 スマホは左から55％幅 */
+  /*}*/
+  /*@include mixin.mq(pc) {*/
+  /*display: none;*/
+  /* PCは非表示 */
+  /*width: 0;*/
+  /* 横幅 PCは非表示のため 幅0 */
+  /*height: 0; */
+  /* 高さ PCは非表示のため 高さ0 */
+  /*} */
+  /*}*/
   /* サイドバーを表示 */
 }
 @media screen and (min-width: 600px) {
@@ -2120,44 +2242,21 @@ input[type=search] {
     /* 表示優先順位 autoに設定*/
   }
 }
-.p-sidebar::after {
-  content: "";
-  width: 15%;
-  /* 横幅 スマホは左から15％幅 */
-  height: 100vh;
-  /* 高さ */
-  background: rgba(0, 0, 0, 0.6);
-  /* 透過度60% */
-  position: fixed;
-  /* 表示位置を設定 */
-  top: 0;
-  /* 上からの位置設定 */
-  left: 100%;
-  /* 左からの位置設定 */
-  transition: 0.4s;
-  /* 表示時間 0.4秒 */
-}
-@media screen and (min-width: 600px) {
-  .p-sidebar::after {
-    width: 55%;
-    /* 横幅 スマホは左から55％幅 */
-  }
-}
-@media screen and (min-width: 1025px) {
-  .p-sidebar::after {
-    display: none;
-    /* PCは非表示 */
-    /*width: 0;*/
-    /* 横幅 PCは非表示のため 幅0 */
-    /*height: 0; */
-    /* 高さ PCは非表示のため 高さ0 */
-  }
-}
 .p-sidebar.is-open {
   top: 0;
   /* 上からの位置設定 */
   left: 15%;
   /* 左からの位置設定 スマホは15%*/
+  /*z-index: 2000;*/
+  /* 上で設定しているのではずす*/
+  /*&::after {*/
+  /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+  /*content: "";*/
+  /*top: 0; */
+  /* 上からの位置設定 */
+  /*left: 0;*/
+  /* 左からの位置設定 左端*/
+  /*}*/
 }
 @media screen and (min-width: 600px) {
   .p-sidebar.is-open {
@@ -2165,20 +2264,13 @@ input[type=search] {
     /* 左からの位置設定 タブレットは55%*/
   }
 }
-.p-sidebar.is-open::after {
-  content: "";
-  top: 0;
-  /* 上からの位置設定 */
-  left: 0;
-  /* 左からの位置設定 左端*/
-}
 
 /* サイドバーを表示した時、サイドバー以外はスクロールしない設定 */
-body.is-open {
-  position: fixed;
-  /* 表示位置を固定*/
-}
-
+/*→ body.scssに移動*/
+/*body.is-open {*/
+/*position: fixed;*/
+/* 表示位置を固定*/
+/*}*/
 /* サイドバー部 PC画面の時に「MENU」の表示設定 */
 .p-sidebar-menu {
   display: none;
@@ -2200,7 +2292,7 @@ body.is-open {
   display: block;
   position: relative;
   /* 表示位置の基準値を設定する */
-  padding-top: 14em;
+  padding-top: 6em;
   /* 上余白設定  */
 }
 @media screen and (min-width: 1025px) {
@@ -2234,7 +2326,7 @@ body.is-open {
 }
 @media screen and (min-width: 1025px) {
   .p-sidebar-category {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 }
 

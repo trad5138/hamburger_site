@@ -120,19 +120,22 @@
     
     @include mixin.mq(pc) {
         margin-top: 2em;
-        padding: 1.5em 2em;     /*内余白の設定*/
+        padding: 2em 2em;     /*内余白の設定*/
     }  
 
     /* サービスメニュー Take Out / Eat In の記事本文部の設定 */
     &_dd {
-        padding: 1em 0 1.5em 0;         /*内余白の設定*/
+        /*padding: 1em 0 1.5em 0;*/        /*内余白の設定*/
+        padding: 1em 0 0.5em 0;            /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
 
         @include mixin.mq(tablet) {
-            padding: 1em 0 2em 0;       /*内余白の設定*/
+            /*padding: 1em 0 2em 0;*/      /*内余白の設定*/
+            padding: 1em 0 0.5em 0;        /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
         }
         
         @include mixin.mq(pc) {
-            padding: 1em 0 3.5em 0;     /*内余白の設定*/
+            /*padding: 1em 0 3.5em 0;*/    /*内余白の設定*/
+            padding: 1em 0 0.5em 0;        /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
         }  
     }
 }
