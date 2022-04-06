@@ -1830,28 +1830,19 @@ body.is-open {
 /* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
 .p-menu-bg {
   width: 100%;
-  /* 横幅 スマホは右から85％幅 */
+  /* 横幅 100% */
   height: 100vh;
-  /* 高さ */
+  /* 高さ 100vh */
   position: fixed;
   /* 表示位置 固定*/
-  /*display: block;*/
   top: 0;
   /* 上からの位置 */
   left: 100%;
-  /* 左からの位置 右横外側 0％ */
-  /*background: color.$color-bg--sideber--transparent;*/
-  /* 透過度60% */
-  /*overflow-y: auto;*/
-  /* 縦 スクロール */
-  /*transition: .4s;*/
-  /* 表示時間 0.4秒 */
+  /* 左からの位置 右横外側 0％ で表示させない */
   transition-property: opacity;
   transition-duration: 0.3s;
-  /*animation: fadeIn 0.4s ease;*/
-  /*transition: 0.4s;*/
   opacity: 0;
-  z-index: 500;
+  z-index: 1000;
   /*@include mixin.mq(tablet) {
        width: 45%; */
   /* 横幅 タブレットは右から45％幅 */
@@ -2139,23 +2130,26 @@ body.is-open {
 .p-service-menu_content_item_dd {
   /*padding: 1em 0 1.5em 0;*/
   /*内余白の設定*/
-  padding: 1em 0 0.5em 0;
+  /*padding: 1em 0 0.5em 0;*/
   /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+  padding: 1em 0 0 0;
 }
 @media screen and (min-width: 600px) {
   .p-service-menu_content_item_dd {
     /*padding: 1em 0 2em 0;*/
     /*内余白の設定*/
-    padding: 1em 0 0.5em 0;
+    /*padding: 1em 0 0.5em 0; */
     /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+    padding: 1em 0 0 0;
   }
 }
 @media screen and (min-width: 1025px) {
   .p-service-menu_content_item_dd {
     /*padding: 1em 0 3.5em 0;*/
     /*内余白の設定*/
-    padding: 1em 0 0.5em 0;
+    /*padding: 1em 0 0.5em 0; */
     /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+    padding: 1em 0 0 0;
   }
 }
 

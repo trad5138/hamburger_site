@@ -4,59 +4,23 @@
 
 /* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
 .p-menu-bg {
-	width: 100%;         /* 横幅 スマホは右から85％幅 */
-	height: 100vh;      /* 高さ */
-	position: fixed;    /* 表示位置 固定*/
-    /*display: block;*/
-	top: 0;             /* 上からの位置 */
-	left: 100%;         /* 左からの位置 右横外側 0％ */
-    /*background: color.$color-bg--sideber--transparent;*/  /* 透過度60% */
-    /*overflow-y: auto;*/   /* 縦 スクロール */
-    /*transition: .4s;*/    /* 表示時間 0.4秒 */
+	width: 100%;         /* 横幅 100% */
+	height: 100vh;       /* 高さ 100vh */
+	position: fixed;     /* 表示位置 固定*/
+	top: 0;              /* 上からの位置 */
+	left: 100%;          /* 左からの位置 右横外側 0％ で表示させない */
     transition-property: opacity;
     transition-duration: 0.3s;
-    /*animation: fadeIn 0.4s ease;*/
-    /*transition: 0.4s;*/
     opacity: 0;
-    z-index: 500;
-
-   /*@include mixin.mq(tablet) {
-        width: 45%; */    /* 横幅 タブレットは右から45％幅 */
-        /*height: 100vh;*/  /* 高さ */
-        /*left: 155%;*/     /* 左からの位置 右横外側 55％ */
-    /*}*/
-
-    /*@include mixin.mq(pc) {
-        display: none;
-		
-	}*/
+    z-index: 1000;
     
-     /* サイドバーを表示 */
+     /* サイドバーを表示したときに一緒に表示させる */
     &.is-open {
 		top: 0;             /* 上からの位置設定 */
 		left: 0;          /* 左からの位置設定 スマホは15%*/
         transition-property: opacity;
         transition-duration: 0.4s;
         opacity: 1;
-        /*width: 100%;
-        height: 100vh;
-        position: fixed;
-        background: color.$color-bg--sideber--transparent; 
-        z-index: 500;*/
-       
-        /*@include mixin.mq(tablet) {
-            left: 55%; */      /* 左からの位置設定 タブレットは55%*/
-        /*}*/
-
-        /*&::after {
-            content: "";
-            top: 0; */          /* 上からの位置設定 */
-            /*left: 0;*/          /* 左からの位置設定 左端*/
-            
-                        
-        /*}*/
 	}
-
-
 }
 
