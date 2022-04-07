@@ -1843,19 +1843,7 @@ body.is-open {
   transition-duration: 0.3s;
   opacity: 0;
   z-index: 1000;
-  /*@include mixin.mq(tablet) {
-       width: 45%; */
-  /* 横幅 タブレットは右から45％幅 */
-  /*height: 100vh;*/
-  /* 高さ */
-  /*left: 155%;*/
-  /* 左からの位置 右横外側 55％ */
-  /*}*/
-  /*@include mixin.mq(pc) {
-         display: none;
-
-  }*/
-  /* サイドバーを表示 */
+  /* サイドバーを表示したときに一緒に表示させる */
 }
 .p-menu-bg.is-open {
   top: 0;
@@ -1865,22 +1853,6 @@ body.is-open {
   transition-property: opacity;
   transition-duration: 0.4s;
   opacity: 1;
-  /*width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: color.$color-bg--sideber--transparent; 
-  z-index: 500;*/
-  /*@include mixin.mq(tablet) {
-      left: 55%; */
-  /* 左からの位置設定 タブレットは55%*/
-  /*}*/
-  /*&::after {
-      content: "";
-      top: 0; */
-  /* 上からの位置設定 */
-  /*left: 0;*/
-  /* 左からの位置設定 左端*/
-  /*}*/
 }
 
 /* サーチボックスの設定 */
@@ -2057,7 +2029,7 @@ body.is-open {
 .p-service-menu_title {
   display: block;
   position: relative;
-  /* 表示位置を設定 */
+  /* 表示位置の基準値を設定する */
   /* Take Out / Eat In の下線の設定 */
 }
 .p-service-menu_title::after {
@@ -2065,19 +2037,19 @@ body.is-open {
   position: absolute;
   /* 表示位置を設定 */
   left: 0;
-  /*左からの位置*/
+  /* 左からの位置*/
   bottom: -0.1em;
-  /*線の上下位置*/
+  /* 線の上下位置*/
   display: block;
-  /*inline-blockで設定*/
+  /* blockで設定*/
   width: 1em;
-  /*線の長さ*/
+  /* 線の長さ*/
   height: 3px;
-  /*線の太さ*/
+  /* 線の太さ*/
   transform: translateX(0);
-  /*位置調整*/
+  /* 位置調整*/
   background-color: #ffffff;
-  /*線の色*/
+  /* 線の色*/
 }
 
 /* サービスメニュー Take Out / Eat In の記事エリアの枠設定 */
@@ -2089,6 +2061,7 @@ body.is-open {
   justify-content: flex-end;
   /* 縦並びだと 水平方向のflex-endを使うと下揃えできる */
   width: 100%;
+  /* 横幅*/
   min-height: 64em;
   /* 高さの最小値を設定しておく 上で設定したものと同じ値にしてみる */
 }
@@ -2110,46 +2083,61 @@ body.is-open {
   /* 下揃え --- 多分効いていない */
   width: 100%;
   margin-top: 1em;
-  padding: 2em 1em;
+  /*padding: 2em 1em;*/
   /*内余白の設定*/
-  /* サービスメニュー Take Out / Eat In の記事本文部の設定 */
+  padding: 1em 1em 1.5em 1em;
+  /*内余白の設定* --- XD仕様変更対応*/
+  /* サービスメニュー Take Out / Eat In の記事本文部の設定 --- XD仕様変更により削除 */
 }
 @media screen and (min-width: 600px) {
   .p-service-menu_content_item {
-    padding: 2em 1em;
+    /*padding: 2em 1em;*/
     /*内余白の設定*/
+    padding: 1em 1em 1.5em 1em;
+    /*内余白の設定* --- XD仕様変更対応*/
   }
 }
 @media screen and (min-width: 1025px) {
   .p-service-menu_content_item {
     margin-top: 2em;
-    padding: 2em 2em;
+    /*padding: 2em 2em; */
     /*内余白の設定*/
+    padding: 1em 2em 1.5em 2em;
+    /*内余白の設定* --- XD仕様変更対応*/
   }
 }
 .p-service-menu_content_item_dd {
+  padding-top: 0.3em;
+  /*内余白の設定* --- XD仕様変更対応*/
   /*padding: 1em 0 1.5em 0;*/
   /*内余白の設定*/
   /*padding: 1em 0 0.5em 0;*/
   /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-  padding: 1em 0 0 0;
+  /*padding: 1em 0 0 0;*/
+  /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
 }
 @media screen and (min-width: 600px) {
   .p-service-menu_content_item_dd {
+    padding-top: 0.3em;
+    /*内余白の設定* --- XD仕様変更対応*/
     /*padding: 1em 0 2em 0;*/
     /*内余白の設定*/
-    /*padding: 1em 0 0.5em 0; */
+    /*padding: 1em 0 0.5em 0;*/
     /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-    padding: 1em 0 0 0;
+    /*padding: 1em 0 0 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
   }
 }
 @media screen and (min-width: 1025px) {
   .p-service-menu_content_item_dd {
+    padding-top: 0.5em;
+    /*内余白の設定* --- XD仕様変更対応*/
     /*padding: 1em 0 3.5em 0;*/
     /*内余白の設定*/
-    /*padding: 1em 0 0.5em 0; */
+    /*padding: 1em 0 0.5em 0;*/
     /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-    padding: 1em 0 0 0;
+    /*padding: 1em 0 0 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
   }
 }
 
