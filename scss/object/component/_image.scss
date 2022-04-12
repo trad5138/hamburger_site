@@ -47,3 +47,29 @@
     background-size: cover;              /* 画像の縦横比保持して全体に覆う*/
     background-repeat: no-repeat;        /* リピートしない */
 }
+
+/* archive single メインヴィジュアル画像 */
+.c-image-as-main-visual-bg{
+    background-image: url(../images/mainvisual-as-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+        background-image: url(../images/mainvisual-as-sp.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/mainvisual-as-pc.png);  /* PC用*/
+    }
+}
+
+/* archive single card 画像 */
+.c-image-as-card-bg{
+    background-image: url(../../../images/card-pc.png);  /* スマホ用*/
+
+    /*@include mixin.mq(tablet) {
+        background-image: url(../images/mainvisual-as-sp.png); */ /* タブレット用*/
+    /*}*/
+
+    /*@include mixin.mq(pc) {
+        background-image: url(../images/mainvisual-as-pc.png);*/  /* PC用*/
+    /*}*/
+}

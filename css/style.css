@@ -381,6 +381,10 @@ textarea {
 /*serach box 背景 カラー*/
 /*ボーダー（線）カラー*/
 /*テーブルカラー*/
+/*文字サイズ ベースサイズ*/
+/*ベースサイズ 16px*/
+/*文字サイズ rem計算*/
+/*文字サイズのレスポンシブ*/
 /*文字サイズ*/
 /*基本フォントサイズ*/
 /*後でサイズ調整する たぶん 1.4remぐらい*/
@@ -634,6 +638,16 @@ input[type=search] {
   /* 透過度60% */
 }
 
+/* archive search コンテンツ部の背景色 */
+.c-bgcolor-content {
+  background-color: #fffdfa;
+}
+
+/* archive search カード部の背景色 */
+.c-bgcolor-card {
+  background-color: #3c2b1c;
+}
+
 /* スマホ・タブレット画面のヘッダー部の「MENU」ボタンtag初期設定解除 */
 .c-button-menu {
   display: inline-block;
@@ -685,6 +699,41 @@ input[type=search] {
 @media screen and (min-width: 1025px) {
   .c-button-search {
     padding: 0.2em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
+/* archive search card 詳しく見るボタンの設定 */
+.c-button-card {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #ffffff;
+  /* ボタンの枠線の設定 */
+  border-radius: 100vh;
+  /* ボタンの角丸の設定 */
+  padding: 0.3em 2.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  line-height: 2;
+  /* 文字の高さ */
+  /*margin: 2em auto; */
+  /* 検索ボックスと検索ボタンの余白 */
+  background-color: #ffffff;
+  /* グラデーション設定 */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+}
+@media screen and (min-width: 600px) {
+  .c-button-card {
+    padding: 0.5em 2.5em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-card {
+    padding: 1em 5em;
     /* ボタンの縦横の大きさの設定 */
   }
 }
@@ -749,6 +798,38 @@ input[type=search] {
   /* 画像の縦横比保持して全体に覆う*/
   background-repeat: no-repeat;
   /* リピートしない */
+}
+
+/* archive single メインヴィジュアル画像 */
+.c-image-as-main-visual-bg {
+  background-image: url(../images/mainvisual-as-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-as-main-visual-bg {
+    background-image: url(../images/mainvisual-as-sp.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-as-main-visual-bg {
+    background-image: url(../images/mainvisual-as-pc.png);
+    /* PC用*/
+  }
+}
+
+/* archive single card 画像 */
+.c-image-as-card-bg {
+  background-image: url(../../../images/card-pc.png);
+  /* スマホ用*/
+  /*@include mixin.mq(tablet) {
+      background-image: url(../images/mainvisual-as-sp.png); */
+  /* タブレット用*/
+  /*}*/
+  /*@include mixin.mq(pc) {
+      background-image: url(../images/mainvisual-as-pc.png);*/
+  /* PC用*/
+  /*}*/
 }
 
 /* サーチボックス の設定 */
@@ -974,44 +1055,53 @@ input[type=search] {
 }
 
 /*archive search ページネーション テキスト*/
-.c-text-as-pagination {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #707070;
-  line-height: 1.6;
-}
-@media screen and (min-width: 600px) {
-  .c-text-as-pagination {
-    font-size: 1.6rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .c-text-as-pagination {
-    font-size: 1.6rem;
-  }
-}
-.c-text-as-pagination.is-this {
-  color: #ffffff;
-}
-@media screen and (min-width: 600px) {
-  .c-text-as-pagination.is-this {
-    font-size: 1.6rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .c-text-as-pagination.is-this {
-    font-size: 1.6rem;
-  }
-}
+/*.c-text-as-pagination {
+    font-family: variable.$font-family--eng;
+    font-size: variable.$font-size--arcive-pagination--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--pagination;
+    line-height: variable.$line-height--normal;
 
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-pagination--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-pagination--pc;
+    }
+
+    &.is-this {
+        color: color.$color-font--pagination--this;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--arcive-pagination--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--arcive-pagination--pc;
+        }
+
+    }
+}*/
 /*archive search ページネーション テキスト  ↑↑ は違うと思うのでここで書き直す*/
 .c-text-as-pagination {
   font-family: "M+ 1M", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #707070;
-  line-height: 1.6;
+  line-height: 1;
+  /*&.is-this {
+      @include mixin.mq(tablet) {
+          color: color.$color-font--pagination--this;
+          font-size: variable.$font-size--arcive-pagination--tablet;
+      }
+
+      @include mixin.mq(pc) {
+          color: color.$color-font--pagination--this;
+          font-size: variable.$font-size--arcive-pagination--pc;
+      }
+
+  }*/
 }
 @media screen and (min-width: 600px) {
   .c-text-as-pagination {
@@ -1025,18 +1115,6 @@ input[type=search] {
     font-family: "Roboto", sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
-  }
-}
-@media screen and (min-width: 600px) {
-  .c-text-as-pagination.is-this {
-    color: #ffffff;
-    font-size: 1.6rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .c-text-as-pagination.is-this {
-    color: #ffffff;
-    font-size: 1.6rem;
   }
 }
 
@@ -1132,6 +1210,7 @@ input[type=search] {
 @media screen and (min-width: 1025px) {
   .c-title-header {
     font-size: 6.4rem;
+    /*font-size: clamp(variable.$font-size--header--tablet, 3.33vw, variable.$font-size--header--pc);*/
   }
 }
 .c-title-header > a {
@@ -1220,7 +1299,7 @@ input[type=search] {
   font-size: 3.6rem;
   font-weight: 700;
   color: #ffffff;
-  line-height: 2;
+  line-height: 1.6;
 }
 @media screen and (min-width: 600px) {
   .c-title-as-main-visual {
@@ -1239,7 +1318,7 @@ input[type=search] {
   font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
-  line-height: 2;
+  line-height: 1.6;
 }
 @media screen and (min-width: 600px) {
   .c-title-as-main-visual-subtitle {
@@ -1286,7 +1365,8 @@ input[type=search] {
 }
 @media screen and (min-width: 1025px) {
   .c-title-as-card {
-    font-size: 3.6rem;
+    font-size: clamp(2rem, 1.875vw, 3.6rem);
+    /*font-size: variable.$font-size--arcive-card-title--pc;*/
   }
 }
 
@@ -1306,6 +1386,7 @@ input[type=search] {
 @media screen and (min-width: 1025px) {
   .c-title-as-card-subtitle {
     font-size: 2.4rem;
+    font-size: clamp(1.6rem, 1.875vw, 2.4rem);
   }
 }
 
@@ -1690,6 +1771,204 @@ body.is-open {
   /* 「×」にするために45度 回転 */
 }
 
+/* archive search カード部 ボタンの設定 */
+.p-button-card {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .p-button-card {
+    margin-top: 4.5em;
+    margin-bottom: 2em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-button-card {
+    margin-top: 5.5em;
+    margin-bottom: 2em;
+  }
+}
+
+/* archive search カード部 の設定 */
+.p-card {
+  display: block;
+  width: 100%;
+  min-height: 58em;
+  /* 高さ--最小値を設定しておく*/
+  box-sizing: border-box;
+  margin-top: 2em;
+  /*margin: 1em 0;*/
+  /* archive search カード部 エリアの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-card {
+    min-height: 30em;
+    margin-top: 2em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card {
+    min-height: 35em;
+    margin-top: 3em;
+  }
+}
+.p-card_body {
+  display: block;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .p-card_body {
+    display: flex;
+    /* 横並び */
+    flex-direction: row;
+    /* 横並び */
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card_body {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.p-card-image {
+  width: 100%;
+  height: 40%;
+  /* 高さ 40％ */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .p-card-image {
+    width: 50%;
+    height: auto;
+    padding-top: 40%;
+    /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-image {
+    width: 50%;
+    height: auto;
+    padding-top: 25%;
+    /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+  }
+}
+.p-card-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media screen and (min-width: 600px) {
+  .p-card-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+
+/* archive search カード部 の テキスト部 の設定 */
+.p-card-item {
+  display: block;
+  width: 100%;
+  height: 60%;
+  padding: 2.5em 2em;
+  box-sizing: border-box;
+  /*&-title {
+      white-space: nowrap;
+  }*/
+}
+@media screen and (min-width: 600px) {
+  .p-card-item {
+    width: 50%;
+    height: 100%;
+    padding: 2.5em 3.5em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item {
+    width: 50%;
+    height: 100%;
+    padding: 4em 4.5em;
+  }
+}
+.p-card-item-subtitle {
+  margin-top: 0.8em;
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-subtitle {
+    margin-top: 1em;
+  }
+}
+.p-card-item-text {
+  margin-top: 0.3em;
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text {
+    margin-top: 0.5em;
+  }
+}
+
+/* contents エリア */
+.p-content {
+  display: block;
+  padding: 2em;
+  /* 内余白の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-content {
+    /*padding: 2em 4em;*/
+    /* 内余白の設定 */
+    padding: 2em clamp(2em, 3.9vw, 4em);
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content {
+    /*padding: 5em 8em;*/
+    /* 内余白の設定 */
+    padding: 5em clamp(4em, 4.16vw, 8em);
+  }
+}
+
+/* contents テキストエリア */
+.p-content-text {
+  /*margin: 1.5em 0 0.5em 0;*/
+  /* 外余白の設定 */
+  padding: 1em 0 0 0;
+}
+@media screen and (min-width: 600px) {
+  .p-content-text {
+    /*margin: 1em 0 1.5em 0; */
+    /* 外余白の設定 */
+    padding: 1em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-text {
+    /*margin: 1em 0; */
+    /* 外余白の設定 */
+    padding: 1em 0 2em 0;
+  }
+}
+
 /* コピーライト の設定 */
 .p-copyright {
   text-align: center;
@@ -1827,6 +2106,99 @@ body.is-open {
   }
 }
 
+/* archive single メイン 画像 エリア */
+.p-mainvisual-as-body {
+  display: block;
+  /* ブロック要素にする */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  background-size: auto;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-position: 0 center;
+  /* 画像は中央に設定*/
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 28em;
+  /* 高さ限度280pxに設定 */
+  /* メイン画像の上にある濃いスモークの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-body {
+    background-size: cover;
+    background-position: 0 46.5%;
+    /* 画像は中央に設定*/
+    height: 28em;
+    /* 高さ限度280pxに設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-as-body {
+    background-size: cover;
+    background-position: 0 46.5%;
+    /* 画像は中央に設定*/
+    height: 24em;
+    /* 高さ限度240pxに設定 */
+  }
+}
+.p-mainvisual-as-body::after {
+  content: "";
+  width: 100%;
+  /* 濃いスモークの横幅 */
+  height: 100%;
+  /* 濃いスモークの高さ */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* 透過度40% */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 */
+  z-index: 100;
+  /* マップの上に表示 */
+}
+
+/* archive single メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual-as-title {
+  display: block;
+  /* 上下中央位置に表示させるため、ブロック要素にする */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 50%;
+  /* 上から50%の位置に配置する */
+  transform: translateY(-50%);
+  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+  left: 4em;
+  /* スマホは、左から0.5emの位置に配置 */
+  z-index: 200;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-title {
+    display: flex;
+    align-items: center;
+    left: 8.5em;
+    /* タブレットは、左から2emの位置に配置 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-as-title {
+    display: flex;
+    align-items: center;
+    left: 6.5em;
+    /* PCは、左から2emの位置に配置 -- タブレットと同じ位置 */
+  }
+}
+.p-mainvisual-as-title_item {
+  margin: 0;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-title_item {
+    margin-top: 0.5em;
+    margin-left: 1em;
+  }
+}
+
 /* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
 .p-menu-bg {
   width: 100%;
@@ -1853,6 +2225,99 @@ body.is-open {
   transition-property: opacity;
   transition-duration: 0.4s;
   opacity: 1;
+}
+
+/* ページネーション部の設定*/
+.p-pagination {
+  display: block;
+  width: 100%;
+  margin: 5.5em 0 1em 0;
+}
+@media screen and (min-width: 600px) {
+  .p-pagination {
+    margin: 5em 0 2em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-pagination {
+    margin: 8em 0 4em 0;
+  }
+}
+
+.p-pagination_sp {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+@media screen and (min-width: 600px) {
+  .p-pagination_sp {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-pagination_sp {
+    display: none;
+  }
+}
+
+.p-pagination_tbpc {
+  display: none;
+  /*@include mixin.mq(pc) {
+      display: inline;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+  }*/
+}
+@media screen and (min-width: 600px) {
+  .p-pagination_tbpc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 1.5em;
+         column-gap: 1.5em;
+    /*gap: 0.5em;*/
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.p-pagination_tbpc-pagenum {
+  display: inline-block;
+  width: auto;
+  height: 34px;
+  white-space: nowrap;
+  padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-prev,
+.p-pagination_tbpc-next {
+  display: inline-block;
+  width: auto;
+  height: 34px;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-item {
+  display: inline-block;
+  background-color: #ffffff;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  border: 1px solid #707070;
+  box-sizing: border-box;
+}
+.p-pagination_tbpc-item > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+}
+.p-pagination_tbpc-item.is-this {
+  color: #ffffff;
+  background-color: #3c2b1c;
 }
 
 /* サーチボックスの設定 */

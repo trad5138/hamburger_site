@@ -1,0 +1,121 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* archive search カード部 の設定 */
+.p-card {
+    display: block;
+    width: 100%;
+    min-height: 58em;            /* 高さ--最小値を設定しておく*/
+    box-sizing: border-box; 
+    margin-top: 2em;
+    /*margin: 1em 0;*/
+
+    @include mixin.mq(tablet) {
+        min-height: 30em; 
+        margin-top: 2em;
+    }
+
+    @include mixin.mq(pc) {
+        min-height: 35em; 
+        margin-top: 3em;
+    } 
+
+    /* archive search カード部 エリアの設定 */
+    &_body {
+        display: block;
+        box-sizing: border-box;
+    
+        @include mixin.mq(tablet) {
+            display: flex;                  /* 横並び */
+            flex-direction: row;            /* 横並び */
+            justify-content: space-between;
+        }
+    
+        @include mixin.mq(pc) {
+            display: flex;
+            flex-direction: row;
+        } 
+    }
+
+    &-image {
+        width: 100%;
+        height: 40%;                    /* 高さ 40％ */
+        position: relative;             /* 表示位置の基準値を設定する */
+        box-sizing: border-box;
+    
+        @include mixin.mq(tablet) {
+            width: 50%;
+            height: auto;
+            padding-top: 40%;             /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+        }
+    
+        @include mixin.mq(pc) {
+            width: 50%;
+            height: auto;
+            padding-top: 25%;             /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+        } 
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left bottom;            
+
+            @include mixin.mq(tablet) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            }
+
+            @include mixin.mq(pc) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            } 
+        }
+    }
+}
+
+/* archive search カード部 の テキスト部 の設定 */
+.p-card-item{
+    display: block;
+    width: 100%;
+    height: 60%;
+    padding: 2.5em 2em;
+    box-sizing: border-box;
+
+    @include mixin.mq(tablet) {
+        width: 50%;
+        height: 100%;
+        padding: 2.5em 3.5em;
+    }
+
+    @include mixin.mq(pc) {
+        width: 50%;
+        height: 100%;
+        padding: 4em 4.5em;
+    }
+
+    /*&-title {
+        white-space: nowrap;
+    }*/
+    
+    &-subtitle {
+        margin-top: 0.8em;
+
+        @include mixin.mq(pc) {
+            margin-top: 1em;
+        }
+    } 
+
+    &-text {
+        margin-top: 0.3em;
+
+        @include mixin.mq(pc) {
+            margin-top: 0.5em;
+        }
+    }
+}

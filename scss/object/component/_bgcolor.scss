@@ -28,4 +28,16 @@
     background: color.$color-bg--sideber--transparent;  /* 透過度60% */
 }
 
+/* archive search コンテンツ部の背景色 */
+.c-bgcolor-content {
+    background-color: color.$color-bg--content;
+}
+
+/* archive search カード部の背景色 */
+.c-bgcolor-card {
+    background-color: color.$color-bg--card; 
+}
+
+
+
 

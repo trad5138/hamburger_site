@@ -193,7 +193,7 @@
 }
 
 /*archive search ページネーション テキスト*/
-.c-text-as-pagination {
+/*.c-text-as-pagination {
     font-family: variable.$font-family--eng;
     font-size: variable.$font-size--arcive-pagination--sp;
     font-weight: variable.$font-weight--bold;
@@ -220,7 +220,7 @@
         }
 
     }
-}
+}*/
 
 /*archive search ページネーション テキスト  ↑↑ は違うと思うのでここで書き直す*/
 .c-text-as-pagination {
@@ -228,7 +228,7 @@
     font-size: variable.$font-size--arcive-pagination--sp;
     font-weight: variable.$font-weight--normal;
     color: color.$color-font--pagination;
-    line-height: variable.$line-height--normal;
+    line-height: variable.$line-height--small;
 
     @include mixin.mq(tablet) {
         font-family: variable.$font-family--eng;
@@ -242,7 +242,7 @@
         font-weight: variable.$font-weight--bold;
     }
     
-    &.is-this {
+    /*&.is-this {
         @include mixin.mq(tablet) {
             color: color.$color-font--pagination--this;
             font-size: variable.$font-size--arcive-pagination--tablet;
@@ -253,7 +253,7 @@
             font-size: variable.$font-size--arcive-pagination--pc;
         }
 
-    }
+    }*/
 }
 
 /*single ページ コンテンツエリア テキスト*/

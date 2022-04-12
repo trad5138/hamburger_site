@@ -24,7 +24,7 @@
         content: "";
         width: 100%;            /* 薄いスモークの横幅 */
         height: 100%;           /* 薄いスモークの高さ */
-        background-color: rgba(0,0,0,0.3);  /* 透過度30% */
+        background-color: color.$color-bg--map--cover--light;  /* 透過度30% */
         position: absolute;     /* 表示位置を設定 */
         top: 0;                 /* 上からの位置設定 */
         left: 0;                /* 左からの位置設定 */
@@ -46,7 +46,7 @@
         content: "";
         width: 100%;            /* 濃いスモークの横幅 */
         height: 60%;            /* 濃いスモークの高さ */
-        background-color: rgba(0,0,0,0.4);  /* 透過度40% */
+        background-color: color.$color-bg--map--cover--dark;  /* 透過度40% */
         position: absolute;     /* 表示位置を設定 */
         top: 0;                 /* 上からの位置設定 */
         left: 0;                /* 左からの位置設定 */

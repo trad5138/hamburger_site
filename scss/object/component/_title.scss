@@ -16,6 +16,7 @@
 
     @include mixin.mq(pc) {
         font-size: variable.$font-size--header--pc;
+        /*font-size: clamp(variable.$font-size--header--tablet, 3.33vw, variable.$font-size--header--pc);*/
     }
 
     & > a {
@@ -94,34 +95,34 @@
 /*archive search ページ メインヴィジュアル タイトル*/
 .c-title-as-main-visual {
     font-family: variable.$font-family--eng;
-    font-size: variable.$font-size--arcive-title--sp;
+    font-size: variable.$font-size--arcive-mainvisual-title--sp;
     font-weight: variable.$font-weight--bold;
     color: color.$color-font--main-visual--title;
-    line-height: variable.$line-height--wide;
+    line-height: variable.$line-height--normal;
 
     @include mixin.mq(tablet) {
-        font-size: variable.$font-size--arcive-title--tablet;
+        font-size: variable.$font-size--arcive-mainvisual-title--tablet;
     }
 
     @include mixin.mq(pc) {
-        font-size: variable.$font-size--arcive-title--pc;
+        font-size: variable.$font-size--arcive-mainvisual-title--pc;
     }
 }
 
 /*archive search ページ メインヴィジュアル サブタイトル チーズバーガーなど*/
 .c-title-as-main-visual-subtitle {
     font-family: variable.$font-family--jp;
-    font-size: variable.$font-size--arcive-subtitle--sp;
+    font-size: variable.$font-size--arcive-mainvisual-subtitle--sp;
     font-weight: variable.$font-weight--bold;
     color: color.$color-font--main-visual--title;
-    line-height: variable.$line-height--wide;
+    line-height: variable.$line-height--normal;
 
     @include mixin.mq(tablet) {
-        font-size: variable.$font-size--arcive-subtitle--tablet;
+        font-size: variable.$font-size--arcive-mainvisual-subtitle--tablet;
     }
 
     @include mixin.mq(pc) {
-        font-size: variable.$font-size--arcive-subtitle--pc;
+        font-size: variable.$font-size--arcive-mainvisual-subtitle--pc;
     }    
 }
 
@@ -155,7 +156,8 @@
     }
 
     @include mixin.mq(pc) {
-        font-size: variable.$font-size--arcive-card-title--pc;
+        font-size: clamp(variable.$font-size--arcive-card-title--tablet, 1.875vw, variable.$font-size--arcive-card-title--pc);
+        /*font-size: variable.$font-size--arcive-card-title--pc;*/
     }    
 }
 
@@ -173,6 +175,7 @@
 
     @include mixin.mq(pc) {
         font-size: variable.$font-size--arcive-card-subtitle--pc;
+        font-size: clamp(variable.$font-size--arcive-card-subtitle--tablet, 1.875vw, variable.$font-size--arcive-card-subtitle--pc);
     }    
 }
 

@@ -1,0 +1,36 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* contents エリア */
+.p-content {
+    display: block;
+    padding: 2em;                /* 内余白の設定 */
+
+    @include mixin.mq(tablet) {
+        /*padding: 2em 4em;*/        /* 内余白の設定 */
+        padding: 2em clamp(2em, 3.9vw, 4em);
+    }
+
+    @include mixin.mq(pc) {
+        /*padding: 5em 8em;*/        /* 内余白の設定 */
+        padding: 5em clamp(4em, 4.16vw, 8em);
+        
+    }       
+}
+
+/* contents テキストエリア */
+.p-content-text {
+    /*margin: 1.5em 0 0.5em 0;*/             /* 外余白の設定 */
+    padding: 1em 0 0 0;
+
+    @include mixin.mq(tablet) {
+        /*margin: 1em 0 1.5em 0; */          /* 外余白の設定 */
+        padding: 1em 0;
+    }
+
+    @include mixin.mq(pc) {
+        /*margin: 1em 0; */          /* 外余白の設定 */
+        padding: 1em 0 2em 0;
+    }  
+}

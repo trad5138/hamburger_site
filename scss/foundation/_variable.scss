@@ -1,3 +1,24 @@
+@use "sass:math";
+
+/*文字サイズ ベースサイズ*/
+$baseFontSize: 16;  /*ベースサイズ 16px*/
+
+/*文字サイズ rem計算*/
+@function rem($px, $context: $baseFontSize) {
+    @return (math.div($px,$context)) * 1rem;
+}
+
+/*文字サイズのレスポンシブ*/
+@function fontSize-Sp($maxFont) {
+    $minWidth: 300;
+    $maxWidth: 599;
+    $maxFontSize: $maxFont * 1px;
+    $fontVw: round($maxFont / $maxWidth * 100 * 1000) / 1000;
+    $minFontSize: round($minWidth * ($fontVw / 100) );
+    @return clamp(#{$minFontSize},#{$fontVw}vw,#{$maxFontSize});
+}
+
+
 /*文字サイズ*/
 /*基本フォントサイズ*/
 $font-size--base--sp: 1.6rem; /*後でサイズ調整する たぶん 1.4remぐらい*/
@@ -56,12 +77,12 @@ $font-size--sidebar-item--tablet: 2.0rem; /*後でサイズ調整する*/
 $font-size--sidebar-item--pc: 2.0rem; /*後でサイズ調整する*/
 
 /*archive search page タイトル フォントサイズ*/
-$font-size--arcive-title--sp: 3.6rem; /*後でサイズ調整する*/
-$font-size--arcive-title--tablet: 6.0rem; /*後でサイズ調整する*/
-$font-size--arcive-title--pc: 6.0rem; /*後でサイズ調整する*/
-$font-size--arcive-subtitle--sp: 1.6rem; /*後でサイズ調整する*/
-$font-size--arcive-subtitle--tablet: 1.6rem; /*後でサイズ調整する*/
-$font-size--arcive-subtitle--pc: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-title--sp: 3.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-title--tablet: 6.0rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-title--pc: 6.0rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--pc: 1.6rem; /*後でサイズ調整する*/
 
 /*archive search page コンテンツ フォントサイズ*/
 $font-size--arcive-content-title--sp: 2.8rem; /*後でサイズ調整する*/
@@ -154,6 +175,8 @@ $line-height--normal: 1.6;
 $line-height--middle: 1.7;
 $line-height--wide: 2;
 $line-height--x-wide: 2.2;
+$line-height--2x-wide: 2.5;
+
 
 /*余白*/
 $margin--small: 5px; 
