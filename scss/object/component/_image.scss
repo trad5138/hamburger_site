@@ -48,8 +48,8 @@
     background-repeat: no-repeat;        /* リピートしない */
 }
 
-/* archive single メインヴィジュアル画像 */
-.c-image-as-main-visual-bg{
+/* archive search メインヴィジュアル画像 */
+.c-image-as-main-visual-bg {
     background-image: url(../images/mainvisual-as-sp.png);  /* スマホ用*/
 
     @include mixin.mq(tablet) {
@@ -61,9 +61,9 @@
     }
 }
 
-/* archive single card 画像 */
-.c-image-as-card-bg{
-    background-image: url(../../../images/card-pc.png);  /* スマホ用*/
+/* archive search card 画像 */
+.c-image-as-card-bg {
+    background-image: url(../images/card-pc.png);  /* スマホ用*/
 
     /*@include mixin.mq(tablet) {
         background-image: url(../images/mainvisual-as-sp.png); */ /* タブレット用*/
@@ -72,4 +72,30 @@
     /*@include mixin.mq(pc) {
         background-image: url(../images/mainvisual-as-pc.png);*/  /* PC用*/
     /*}*/
+}
+
+/* single メインヴィジュアル画像 */
+.c-image-single-main-visual-bg {
+    background-image: url(../images/single-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+       background-image: url(../images/single-tb.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/single-pc.png);  /* PC用*/
+    }
+}
+
+/* page メインヴィジュアル画像 */
+.c-image-page-main-visual-bg {
+    background-image: url(../images/shop-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+       background-image: url(../images/shop-tb.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/shop-pc.png);  /* PC用*/
+    }
 }

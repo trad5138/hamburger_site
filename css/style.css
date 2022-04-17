@@ -648,6 +648,21 @@ input[type=search] {
   background-color: #3c2b1c;
 }
 
+/* single page blockquote部の背景色 */
+.c-bgcolor-blockquote {
+  background-color: #f5f5f5;
+}
+
+/* single page code表示部の背景色 */
+.c-bgcolor-code {
+  background-color: #f5f5f5;
+}
+
+/* single page table部の背景色 */
+.c-bgcolor-table {
+  background-color: #ffffff;
+}
+
 /* スマホ・タブレット画面のヘッダー部の「MENU」ボタンtag初期設定解除 */
 .c-button-menu {
   display: inline-block;
@@ -738,6 +753,40 @@ input[type=search] {
   }
 }
 
+/* single page ボタンの設定 */
+.c-button-si {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #707070;
+  /* ボタンの枠線の設定 */
+  border-radius: 20px;
+  /* ボタンの角丸の設定 */
+  padding: 1.7em 1.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  background-image: linear-gradient(#f2ede9, #e6e0dc);
+  /* グラデーション設定 */
+  box-shadow: inset 2px 2px 2px #f2ede9;
+  /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .c-button-si {
+    padding: 2.4em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-si {
+    padding: 2.4em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
 /* メインヴィジュアル画像 */
 .c-image-main-visual-bg {
   background-image: url(../images/mainvisual-sp@2x.jpg);
@@ -800,7 +849,7 @@ input[type=search] {
   /* リピートしない */
 }
 
-/* archive single メインヴィジュアル画像 */
+/* archive search メインヴィジュアル画像 */
 .c-image-as-main-visual-bg {
   background-image: url(../images/mainvisual-as-sp.png);
   /* スマホ用*/
@@ -818,9 +867,9 @@ input[type=search] {
   }
 }
 
-/* archive single card 画像 */
+/* archive search card 画像 */
 .c-image-as-card-bg {
-  background-image: url(../../../images/card-pc.png);
+  background-image: url(../images/card-pc.png);
   /* スマホ用*/
   /*@include mixin.mq(tablet) {
       background-image: url(../images/mainvisual-as-sp.png); */
@@ -830,6 +879,42 @@ input[type=search] {
       background-image: url(../images/mainvisual-as-pc.png);*/
   /* PC用*/
   /*}*/
+}
+
+/* single メインヴィジュアル画像 */
+.c-image-single-main-visual-bg {
+  background-image: url(../images/single-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-single-main-visual-bg {
+    background-image: url(../images/single-tb.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-single-main-visual-bg {
+    background-image: url(../images/single-pc.png);
+    /* PC用*/
+  }
+}
+
+/* page メインヴィジュアル画像 */
+.c-image-page-main-visual-bg {
+  background-image: url(../images/shop-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-page-main-visual-bg {
+    background-image: url(../images/shop-tb.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-page-main-visual-bg {
+    background-image: url(../images/shop-pc.png);
+    /* PC用*/
+  }
 }
 
 /* サーチボックス の設定 */
@@ -1175,23 +1260,9 @@ input[type=search] {
   }
 }
 
-/*single ページ コンテンツエリア 見出し４*/
+/*single ページ コンテンツエリア 太文字*/
 .c-text-si-bold {
-  font-family: "M+ 1M", sans-serif;
-  font-size: 1.6rem;
   font-weight: 700;
-  color: #3c2a10;
-  line-height: 1.6;
-}
-@media screen and (min-width: 600px) {
-  .c-text-si-bold {
-    font-size: 1.6rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .c-text-si-bold {
-    font-size: 1.6rem;
-  }
 }
 
 /* index ヘッダータイトル Humbarger */
@@ -1790,6 +1861,29 @@ body.is-open {
   }
 }
 
+/* single page ボタンの設定 */
+.p-button-si {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .p-button-si {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    text-align: left;
+    width: 58%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-button-si {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    width: 42%;
+  }
+}
+
 /* archive search カード部 の設定 */
 .p-card {
   display: block;
@@ -1938,6 +2032,7 @@ body.is-open {
     /*padding: 2em 4em;*/
     /* 内余白の設定 */
     padding: 2em clamp(2em, 3.9vw, 4em);
+    /* 内余白-横余白伸縮の設定 */
   }
 }
 @media screen and (min-width: 1025px) {
@@ -1945,27 +2040,176 @@ body.is-open {
     /*padding: 5em 8em;*/
     /* 内余白の設定 */
     padding: 5em clamp(4em, 4.16vw, 8em);
+    /* 内余白-横余白伸縮の設定 */
   }
 }
 
 /* contents テキストエリア */
 .p-content-text {
-  /*margin: 1.5em 0 0.5em 0;*/
-  /* 外余白の設定 */
   padding: 1em 0 0 0;
+  /*内余白の設定*/
 }
 @media screen and (min-width: 600px) {
   .p-content-text {
-    /*margin: 1em 0 1.5em 0; */
-    /* 外余白の設定 */
     padding: 1em 0;
   }
 }
 @media screen and (min-width: 1025px) {
   .p-content-text {
-    /*margin: 1em 0; */
-    /* 外余白の設定 */
     padding: 1em 0 2em 0;
+  }
+}
+
+/* single page ページ contents エリア */
+.p-content-si {
+  display: block;
+  padding: 0 1.3em;
+  /*内余白の設定*/
+}
+@media screen and (min-width: 600px) {
+  .p-content-si {
+    padding: 0 4em;
+    /*内余白の設定*/
+    /*padding: 0 clamp(2em, 3.9vw, 4em);*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si {
+    /*padding: 0 8em;*/
+    /* 内余白の設定 */
+    padding: 0 clamp(4em, 4.16vw, 8em);
+    /* 内余白-横余白伸縮の設定 */
+  }
+}
+
+/* single page ページ contentsエリア ブロックの設定 */
+.p-content-si-block {
+  display: block;
+  margin: 2rem 0;
+  /* 外余白の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-block {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-block {
+    margin: 5rem 0;
+  }
+}
+.p-content-si-block p {
+  margin: 2rem 0;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-block p {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-block p {
+    margin: 5rem 0;
+  }
+}
+
+/*  single page ページ 最下部の余白 */
+.p-content-si-margin {
+  display: block;
+  margin: 0;
+  padding-top: 9.5em;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-margin {
+    padding-top: 12em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-margin {
+    padding-top: 19em;
+  }
+}
+
+/* single page ページ contentsエリア blockquoteエリア の設定 */
+.p-content-blockquote {
+  padding: 0.1em 1.3em;
+}
+@media screen and (min-width: 600px) {
+  .p-content-blockquote {
+    padding: 0.1em 3em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-blockquote {
+    padding: 0.1em 3em;
+  }
+}
+.p-content-blockquote > p a {
+  text-decoration: underline;
+  color: #4a6c9b;
+}
+
+/* single page ページ contentsエリア HTMLコードエリアの設定 */
+.p-content-pre {
+  margin: 2rem 0;
+  padding: 1.5em 3em;
+  white-space: pre-wrap;
+}
+@media screen and (min-width: 600px) {
+  .p-content-pre {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-pre {
+    margin: 6rem 0;
+  }
+}
+
+/* single page ページ contentsエリア tableエリアの設定 */
+.p-content-table {
+  width: 100%;
+  margin: 3rem 0;
+  /*テーブル 列１*/
+  /*テーブル 列２*/
+}
+@media screen and (min-width: 600px) {
+  .p-content-table {
+    margin: 6rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table {
+    margin: 5rem 0;
+  }
+}
+.p-content-table td {
+  padding: 1.6em 1.8em;
+  border: 1px solid #707070;
+}
+.p-content-table-item-1 {
+  width: 40%;
+}
+@media screen and (min-width: 600px) {
+  .p-content-table-item-1 {
+    width: 29%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table-item-1 {
+    width: 42%;
+  }
+}
+.p-content-table-item-2 {
+  width: 60%;
+}
+@media screen and (min-width: 600px) {
+  .p-content-table-item-2 {
+    width: 71%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table-item-2 {
+    width: 58%;
   }
 }
 
@@ -2046,6 +2290,54 @@ body.is-open {
   }
 }
 
+/* single page リストタグ部 の設定 */
+.p-list {
+  margin: 2em 0;
+  /* ulタグの上外余白 */
+  /* 上外余白 */
+  /* 左外余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-list {
+    margin: 3em 0;
+    padding: 0 3em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-list {
+    margin: 3em 0;
+    padding: 0em 3em;
+  }
+}
+.p-list__ol {
+  counter-reset: li;
+  /*olのリストの数字をリセット*/
+  margin-top: 1.2em;
+}
+.p-list__ol > li {
+  list-style: none;
+  /*元のスタイルを非表示にする*/
+}
+.p-list__ol > li::before {
+  counter-increment: li;
+  /*リストの数字を1つ進める*/
+  content: counter(li) ".";
+  /*リストを連番にする 連番の後に”.”を付ける */
+  /*margin-right: 1.5em;*/
+  /*要素が重なるから右へ移動*/
+  line-height: 1.6;
+  /*文字が重なるのを防止*/
+}
+.p-list__ul {
+  margin-top: 1.2em;
+}
+.p-list_margin-top {
+  margin-top: 3.5em;
+}
+.p-list_margin-left {
+  margin-left: 1em;
+}
+
 /* メイン 画像 エリア */
 .p-mainvisual-body {
   display: block;
@@ -2106,7 +2398,7 @@ body.is-open {
   }
 }
 
-/* archive single メイン 画像 エリア */
+/* archive search メイン 画像 エリア */
 .p-mainvisual-as-body {
   display: block;
   /* ブロック要素にする */
@@ -2159,7 +2451,7 @@ body.is-open {
   /* マップの上に表示 */
 }
 
-/* archive single メイン 画像 エリア のタイトル文字の設定 */
+/* archive search メイン 画像 エリア のタイトル文字の設定 */
 .p-mainvisual-as-title {
   display: block;
   /* 上下中央位置に表示させるため、ブロック要素にする */
@@ -2196,6 +2488,86 @@ body.is-open {
   .p-mainvisual-as-title_item {
     margin-top: 0.5em;
     margin-left: 1em;
+  }
+}
+
+/* single メイン 画像 エリア */
+.p-mainvisual-single-body {
+  display: block;
+  /* ブロック要素にする */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  background-size: auto;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-position: center bottom;
+  /* 画像は中央、下を基準に設定*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 画像の縦横比保持して全体に覆う*/
+  height: 22em;
+  /* 高さ限度220pxに設定 */
+  /* メイン画像の縦横比の設定 -- あまり意味ないかも*/
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-body {
+    background-size: cover;
+    height: 50em;
+    /* 高さ限度500pxに設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-body {
+    background-size: cover;
+    height: 50em;
+    /* 高さ限度500pxに設定 */
+  }
+}
+.p-mainvisual-single-body::before {
+  content: "";
+  display: block;
+  padding-top: 60%;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-body::before {
+    padding-top: 60%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-body::before {
+    padding-top: 32.2%;
+  }
+}
+
+/* single メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual-single-title {
+  display: flex;
+  /* 上下中央位置に表示させるため、ブロック要素にする */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 50%;
+  /* 上から50%の位置に配置する */
+  transform: translateY(-50%);
+  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+  left: 2.5em;
+  /* スマホは、左から0.5emの位置に配置 */
+  z-index: 200;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-title {
+    display: flex;
+    align-items: center;
+    /*left: 8.5em;*/
+    /* タブレットは、左から8.5emの位置に配置 */
+    left: clamp(2em, 8vw, 8.5em);
+    /* タブレットは、左から8.5emの位置に配置 横幅狭くなると左余白を狭くする*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-title {
+    display: flex;
+    align-items: center;
+    left: 8.5em;
+    /* PCは、左から8.5emの位置に配置 -- タブレットと同じ位置 */
   }
 }
 
@@ -2318,6 +2690,221 @@ body.is-open {
 .p-pagination_tbpc-item.is-this {
   color: #ffffff;
   background-color: #3c2b1c;
+}
+
+.p-photo-block {
+  display: block;
+  margin: 2em 0;
+  /* 横幅100%の画像部の設定 */
+  /* 中段の中央位置にある画像の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block {
+    margin: 4em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block {
+    margin: 4em 0;
+  }
+}
+.p-photo-block-image {
+  width: 100%;
+  height: auto;
+  /* 高さ */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+  padding-top: 37%;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image {
+    padding-top: 37%;
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image {
+    padding-top: 37%;
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+.p-photo-block-image > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+.p-photo-block-image_middle {
+  width: 80%;
+  /*position: relative;*/
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+  /*padding-top: 62%;*/
+  margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image_middle {
+    width: 80%;
+    /*padding-top: 62%;*/
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image_middle {
+    width: 43%;
+    /*padding-top: 62%;*/
+    /* 縦横比率を設定 横長に設定 -- これを入れると下余白ができる */
+  }
+}
+.p-photo-block-image_middle > img {
+  width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+
+/* 写真とテキスト エリアの設定 */
+.p-photo-media-text {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  /*grid-template-rows: 1fr;*/
+  /* 縦（行）の設定 */
+  /*grid-template-columns: 43% 1fr; */
+  /* 横（列）の設定 */
+  /*grid-column-gap: 0.5em; */
+  /* グリッド間の横余白 */
+  /* 偶数番目の画像を右側に表示 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-media-text {
+    margin: 4em 0;
+    /*grid-column-gap: 1em; */
+    /* グリッド間の横余白 */
+    -moz-column-gap: 1em;
+         column-gap: 1em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-media-text {
+    margin: 4em 0;
+    /*grid-column-gap: 2em;*/
+    /* グリッド間の横余白 */
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+  }
+}
+.p-photo-media-text_media {
+  /*grid-column: 1;*/
+  /* グリッド 横 1 */
+  width: 43%;
+}
+.p-photo-media-text_media > img {
+  width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  /*object-fit: cover;*/
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+.p-photo-media-text_content {
+  /*grid-column: 2;*/
+  /* グリッド 横 2 */
+  width: 54%;
+}
+.p-photo-media-text_content > p {
+  width: 100%;
+}
+.p-photo-media-text:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* タイル型 画像のレイアウト部 の設定 */
+.p-photo-grid {
+  display: grid;
+  /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
+  gap: 1.2em;
+  /* グリッド間の縦横余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-grid {
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /* 横 2列*/
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    /*横2列 最小幅240px～自動幅 の設定 */
+    /*grid-column-gap: 1em; */
+    /* グリッド間の横余白 */
+    /*grid-row-gap: 1.2em;*/
+    /* グリッド間の横余白 */
+    gap: 1.2em 1em;
+    /* グリッド間の横1.2、縦1.0 余白 */
+    margin-top: 15em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-grid {
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /* 横 3列*/
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    /*横3列 最小幅240px～自動幅 の設定 */
+    gap: 1.2em;
+    /* グリッド間の縦横余白 */
+    margin-top: 0;
+  }
+}
+.p-photo-grid > img {
+  max-width: 100%;
+  margin: 0 auto;
+  /*height: auto;*/
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  /*object-fit: cover;*/
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
 }
 
 /* サーチボックスの設定 */

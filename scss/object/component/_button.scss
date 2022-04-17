@@ -61,3 +61,25 @@
         padding: 1em 5em;     /* ボタンの縦横の大きさの設定 */
     }   
 }
+
+/* single page ボタンの設定 */
+.c-button-si {
+    display: inline-block;                          /* inline-blockに設定 */
+    border: 1px solid color.$color-border--button;  /* ボタンの枠線の設定 */
+    border-radius: variable.$radius--x-large;        /* ボタンの角丸の設定 */
+    padding: 1.7em 1.5em;                           /* ボタンの縦横の大きさの設定 */
+    box-sizing: border-box;
+    text-align: center;                             /* 文字を中央揃え */
+    background-image: linear-gradient(color.$color-bg--button--search, color.$color-bg--button--search-gradient); /* グラデーション設定 */
+    box-shadow: inset 2px 2px 2px color.$color-bg--button--search; /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+    cursor: pointer;  /*要素にマウスポインタ―が乗ったとき*/
+    width: 100%;
+
+    @include mixin.mq(tablet) {
+        padding: 2.4em 2em;     /* ボタンの縦横の大きさの設定 */
+    }
+
+    @include mixin.mq(pc) {
+        padding: 2.4em 2em;     /* ボタンの縦横の大きさの設定 */
+    }   
+}

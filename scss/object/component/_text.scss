@@ -307,21 +307,9 @@
     }    
 }
 
-/*single ページ コンテンツエリア 見出し４*/
+/*single ページ コンテンツエリア 太文字*/
 .c-text-si-bold {
-    font-family: variable.$font-family--jp;
-    font-size: variable.$font-size--single-text--sp;
     font-weight: variable.$font-weight--bold;
-    color: color.$color-font--text;
-    line-height: variable.$line-height--normal;
-
-    @include mixin.mq(tablet) {
-        font-size: variable.$font-size--single-text--tablet;
-    }
-
-    @include mixin.mq(pc) {
-        font-size: variable.$font-size--single-text--pc;
-    }    
 }
 
 

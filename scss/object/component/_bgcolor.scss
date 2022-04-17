@@ -38,6 +38,20 @@
     background-color: color.$color-bg--card; 
 }
 
+/* single page blockquote部の背景色 */
+.c-bgcolor-blockquote {
+    background-color: color.$color-bg--quote; 
+}
+
+/* single page code表示部の背景色 */
+.c-bgcolor-code {
+    background-color: color.$color-bg--html; 
+}
+
+/* single page table部の背景色 */
+.c-bgcolor-table {
+    background-color: color.$color-table--body; 
+}
 
 
 
